@@ -54,7 +54,7 @@ class ApplicationController < Sinatra::Base
     redirect "/"
   end
 
-  post "/account" do
+  patch "/account" do
     @user = User.find(session[:user_id])
     if params[:withdrawl]
       @user.withdrawl(params[:withdrawl])
