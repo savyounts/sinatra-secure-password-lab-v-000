@@ -32,7 +32,7 @@ class ApplicationController < Sinatra::Base
   end
 
   post "/login" do
-    ##your code here
+    session[:user_id] = params[:username]
   end
 
   get "/failure" do
