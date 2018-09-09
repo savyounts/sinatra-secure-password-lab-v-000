@@ -4,10 +4,10 @@ class User < ActiveRecord::Base
   validates :username, :presence => true
 
   def deposit(amount)
-    self.balance += amount
+    self.balance += amount.to_i
   end
 
   def withdrawl(amount)
-    self.balance -= amount if current_user.balance > amount
+    self.balance -= amount.to_i if current_user.balance > amount.to_i
   end
 end
