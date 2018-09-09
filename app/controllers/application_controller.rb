@@ -55,10 +55,11 @@ class ApplicationController < Sinatra::Base
   end
 
   post "/account" do
+    @user = User.find(session[:user_id])
     if params[:withdrawl]
-      current_user.withdrawl(params[:withdrawl])
+      user.withdrawl(params[:withdrawl])
     elsif params[:deposit]
-      current_user.deposit(params[:deposit])
+      user.deposit(params[:deposit])
     end
     erb :account
   end
