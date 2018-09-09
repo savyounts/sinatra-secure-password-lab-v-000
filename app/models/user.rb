@@ -5,9 +5,11 @@ class User < ActiveRecord::Base
 
   def deposit(amount)
     self.balance += amount.to_i
+    self.save
   end
 
   def withdrawl(amount)
     self.balance -= amount.to_i if self.balance > amount.to_i
+    self.save
   end
 end
