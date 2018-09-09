@@ -79,7 +79,7 @@ class ApplicationController < Sinatra::Base
     def withdrawl(amount)
       current_user.balance -= amount if current_user.balance > amount
     end
-    
+
   end
 
 end
