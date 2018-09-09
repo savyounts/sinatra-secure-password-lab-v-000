@@ -8,6 +8,6 @@ class User < ActiveRecord::Base
   end
 
   def withdrawl(amount)
-    self.balance -= amount.to_i if current_user.balance > amount.to_i
+    self.balance -= amount.to_i if self.balance > amount.to_i
   end
 end
