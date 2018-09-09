@@ -2,7 +2,7 @@
 
 <p>We are currently working on your account.</p>
 <% if !@user.withdrawl %>
-  <p>You do not have enough money to withdrawl</p> 
+  <p>You do not have enough money to withdrawl</p>
   <% end %>
 <form action="/account" method="post">
   <input id="hidden" type="hidden" name="_method" value="patch">
