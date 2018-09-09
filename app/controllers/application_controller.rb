@@ -54,15 +54,15 @@ class ApplicationController < Sinatra::Base
     redirect "/"
   end
 
-  post "/account" do
-    @user = User.find(session[:user_id])
-    if params[:withdrawl]
-      @user.withdrawl(params[:withdrawl])
-    elsif params[:deposit]
-      @user.deposit(params[:deposit])
-    end
-    erb :account
-  end
+  # post "/account" do
+  #   @user = User.find(session[:user_id])
+  #   if params[:withdrawl]
+  #     @user.withdrawl(params[:withdrawl])
+  #   elsif params[:deposit]
+  #     @user.deposit(params[:deposit])
+  #   end
+  #   erb :account
+  # end
 
   helpers do
     def logged_in?
